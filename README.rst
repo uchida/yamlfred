@@ -1,8 +1,16 @@
 yamlfred
 ========
 
-Manage Alfred Workflow via yaml templates.
-Convert Alfred workflow into yaml templates and vice a versa.
+The `Alfred Workflows <http://support.alfredapp.com/workflows>`_ management tool
+with a "divide and rule" manner.
+
+Alfred Workflows contains README and scripts in its info.plist,
+hard to keep the "divide and rule" strategy.
+
+yamlfred manage these files separately and translate an info.plist
+into a simplified workflow.yml, with a "divide and rule" manner.
+In addition, yamlfred has abilities to extract or create Alfred workflow,
+translate a workflow.yml into an info.plist and vice a versa.
 
 Usage
 -----
