@@ -12,6 +12,17 @@ into a simplified workflow.yml, with a "divide and rule" manner.
 In addition, yamlfred has abilities to extract or create Alfred workflow,
 translate a workflow.yml into an info.plist and vice a versa.
 
+Installation
+------------
+
+To install yamlfred, use pip install::
+
+  $ pip install git+https://github.com/uchida/yamlfred
+
+For the case of uninstall, use pip uninstall yamlfred::
+
+  $ pip uninstall yamlfred
+
 Usage
 -----
 
