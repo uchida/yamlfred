@@ -51,3 +51,13 @@ Usage
 
     $ yamlfred create <workflow>
 
+Examples
+--------
+
+These Alfred workflows uses yamlfred:
+
+- `alfred-toggle-vpn <https://github.com/uchida/alfred-toggle-vpn>`_
+- `alfred-toggle-btdev <https://github.com/uchida/alfred-toggle-btdev>`_
+
+One can upload github release page via `Travis CI <https://travis-ci.org>`_,
+consult .travis.yml in these repositories for detailed information.
