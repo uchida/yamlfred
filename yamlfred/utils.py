@@ -16,7 +16,10 @@ def remove_default(local, default):
     explicit = {}
     for key in local.keys():
         if isinstance(local[key], dict):
-            explicit[key] = remove_default(local[key], default[key])
+            if key in default:
+                explicit[key] = remove_default(local[key], default[key])
+            else:
+                explicit[key] = local[key]
         else:
             if key not in default:
                 explicit[key] = local[key]

@@ -6,7 +6,7 @@ from yamlfred.utils import remove_default, merge_dicts
 
 from yamlfred.utils import Include
 
-default_by_type = {
+defaults = {
     'alfred.workflow.output.notification': {
         'config': {'removeextension': False, 'output': 0, 'lastpathcomponent': False, 'onlyshowifquerypopulated': False, 'sticky': False},
         'version': 0,
@@ -101,7 +101,8 @@ class AlfredObject(object):
 
     def __init__(self, dic):
         self.type = dic['type']
-        self.prop = merge_dicts(default_by_type[self.type], dic)
+        default = defaults[self.type] if self.type in defaults else {}
+        self.prop = merge_dicts(default, dic)
         if 'uid' not in self.prop:
             self.prop['uid'] = uuid.uuid1()
         self.script_type = None
@@ -114,7 +115,8 @@ class AlfredObject(object):
         return
 
     def dump(self):
-        prop = remove_default(self.prop, default_by_type[self.type])
+        default = defaults[self.type] if self.type in defaults else {}
+        prop = remove_default(self.prop, default)
         if self.script_type:
             with open(self.prop['uid'], 'w') as f:
                 f.write(self.prop['config'].get(self.script_type).encode('utf-8'))
