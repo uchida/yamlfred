@@ -1,10 +1,6 @@
 '''
 yamlfred:
 
-Note that "python setup.py test" invokes pytest on the package. With appropriately
-configured setup.cfg, this will check both xxx_test modules and docstrings.
-
-Copyright 2014, Akihiro Uchida.
 Licensed under CC0.
 '''
 from setuptools import setup, find_packages
