@@ -1,7 +1,7 @@
 yamlfred
 ========
 
-|version| |license|_
+|version| |license|_ |circle-ci|_
 
 The `Alfred Workflows`_ management tool with a *divide and rule* manner.
 
@@ -78,8 +78,10 @@ dedicated to the public domain, no rights reserved.
 
 .. |version| image:: https://img.shields.io/github/tag/uchida/yamlfred.svg
 .. |license| image:: https://img.shields.io/github/license/uchida/yamlfred.svg
+.. |circle-ci| image:: https://img.shields.io/circleci/project/uchida/yamlfred.svg
 .. |CC0| image:: http://i.creativecommons.org/p/zero/1.0/88x31.png
 
 .. _Alfred Workflows: http://support.alfredapp.com/workflows
 .. _license: https://tldrlegal.com/license/creative-commons-cc0-1.0-universal
 .. _CC0: http://creativecommons.org/publicdomain/zero/1.0/
+.. _circle-ci: https://circleci.com/gh/uchida/yamlfred
