@@ -32,8 +32,6 @@ from yamlfred.utils import TemporaryDirectory
 from yamlfred.alfred_connections import AlfredConnections
 from yamlfred.alfred_object import AlfredObject
 
-__version__ = "0.1.dev"
-
 
 class AlfredWorkflow(object):
 
