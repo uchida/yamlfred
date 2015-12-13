@@ -109,7 +109,7 @@ class AlfredObject(object):
         default = defaults[self.type] if self.type in defaults else {}
         self.prop = merge_dicts(default, dic)
         if 'uid' not in self.prop:
-            self.prop['uid'] = uuid.uuid1()
+            self.prop['uid'] = uuid.uuid4()
         self.script_type = None
         if self.type == 'alfred.workflow.action.applescript':
             self.script_type = 'applescript'

@@ -38,7 +38,7 @@ class AlfredWorkflow(object):
     def __init__(self):
         self.readme = ""
         self.prop = {
-            "name": str(uuid.uuid1()),
+            "name": str(uuid.uuid4()),
             "description": "",
             "bundleid": "",
             "createdby": "",
@@ -66,7 +66,7 @@ class AlfredWorkflow(object):
         for key in wf_yaml.keys():
             self.prop[key] = wf_yaml[key]
         for obj in wf_yaml["objects"]:
-            new_obj = {'uid': str(uuid.uuid1())}
+            new_obj = {'uid': str(uuid.uuid4())}
             new_obj.update(obj)
             uid = new_obj['uid']
             if 'uidata' not in self.prop:
