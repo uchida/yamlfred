@@ -2,7 +2,3 @@ machine:
   python:
     version: 2.7.10
 
-test:
-  override:
-    - pip install .
-

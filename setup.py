@@ -24,6 +24,8 @@ setup(name="yamlfred",
       include_package_data=True,
       zip_safe=False,
       install_requires=['PyYAML'],
+      setup_requires=['pytest-runner'],
+      tests_require=['pytest'],
       entry_points={
         'console_scripts':
             ['yamlfred=yamlfred:main']
