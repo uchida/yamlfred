@@ -37,7 +37,8 @@ defaults = {
         'version': 0,
     },
     'alfred.workflow.input.scriptfilter': {
-        'config': {'withspace': True, 'escaping': 127, 'script': '', 'argumenttype': 0, 'type': 0},
+        'config': {'withspace': True, 'escaping': 127, 'script': '', 'argumenttype': 0, 'type': 0,
+                   'queuedelaycustom': 3, 'queuedelayimmediatelyinitially': True, 'queuedelaymode': 0, 'queuemode': 1},
         'version': 0,
     },
     'alfred.workflow.action.browseinalfred': {
@@ -52,7 +53,7 @@ defaults = {
         'config': {'clipboardtext': '', 'autopaste': False},
         'version': 0, },
     'alfred.workflow.output.script': {
-        'config': {'escaping': 127, 'type': 0, 'script': ''},
+        'config': {'escaping': 127, 'type': 0, 'script': '', 'concurrently': False},
         'version': 0, },
     'alfred.workflow.action.launchfiles': {
         'config': {'paths': [], 'toggle': False},
@@ -83,7 +84,7 @@ defaults = {
         'version': 0,
     },
     'alfred.workflow.action.script': {
-        'config': {'escaping': 127, 'type': 0, 'script': ''},
+        'config': {'escaping': 127, 'type': 0, 'script': '', 'concurrently': False},
         'version': 0,
     },
     'alfred.workflow.action.applescript': {
@@ -92,6 +93,10 @@ defaults = {
     },
     'alfred.workflow.action.terminalcommand': {
         'config': {'escaping': 0},
+        'version': 0,
+    },
+    'alfred.workflow.trigger.remote': {
+        'config': {'argumenttype': 0, 'workflowonly': False},
         'version': 0,
     },
 }
