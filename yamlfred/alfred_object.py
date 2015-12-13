@@ -124,6 +124,7 @@ class AlfredObject(object):
         prop = remove_default(self.prop, default)
         if self.script_type:
             with open(self.prop['uid'], 'w') as f:
-                f.write(self.prop['config'].get(self.script_type).encode('utf-8'))
+                script = self.prop['config'].get(self.script_type)
+                f.write(script.encode('utf-8'))
             prop['config'][self.script_type] = Include(self.prop['uid'])
         return prop

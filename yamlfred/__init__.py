@@ -61,8 +61,7 @@ class AlfredWorkflow(object):
 
     def load_yaml(self, path):
         with open(path, 'r') as f:
-            s = f.read()
-            wf_yaml = yaml.load(s.decode('utf8'))
+            wf_yaml = yaml.load(f.read().decode('utf8'))
         for key in wf_yaml.keys():
             self.prop[key] = wf_yaml[key]
         for obj in wf_yaml["objects"]:

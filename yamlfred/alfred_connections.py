@@ -29,8 +29,7 @@ class AlfredConnections(object):
     def dump(self):
         prop = {}
         for key, links in self.items.items():
-            prop[key] = []
-            if links:
-                for link in links:
-                    prop[key].append(remove_default(link, link_default))
+            if not links:
+                continue
+            prop[key] = [remove_default(link, link_default) for link in links]
         return prop
