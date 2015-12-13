@@ -56,8 +56,11 @@ Examples
 
 These Alfred workflows uses yamlfred:
 
-- `alfred-toggle-vpn <https://github.com/uchida/alfred-toggle-vpn>`_
-- `alfred-toggle-btdev <https://github.com/uchida/alfred-toggle-btdev>`_
+- `alfred-switch-vpn <https://github.com/uchida/alfred-switch-vpn>`_
+- `alfred-switch-bluetooth <https://github.com/uchida/alfred-switch-bluetooth>`_
+- `alfred-switch-audio <https://github.com/uchida/alfred-switch-audio>`_
 
-One can upload github release page via `Travis CI <https://travis-ci.org>`_,
-consult .travis.yml in these repositories for detailed information.
+On can upload github release page via CI services, such as `Circle CI <https://circleci.com/>`_
+with `hub <https://github.com/github/hub/>`_ command and `GITHUB_TOKEN`
+consult `circle.yml` in these repositories for detailed information.
+
