@@ -43,8 +43,9 @@ def test_remove_default():
     assert 'bar' not in removed['foo']
 
 
-def test_tempdir_is_absent_after_exit():
+def test_temporary_directory():
     tmppath = ''
     with TemporaryDirectory() as tmpdir:
         tmppath = tmpdir
-    assert not os.path.exists(tmppath)
+        assert os.path.exists(tmppath), "temporal directory exists in with block"
+    assert not os.path.exists(tmppath), "temporal directory absent out of block"
