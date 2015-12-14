@@ -79,7 +79,7 @@ class AlfredWorkflow(object):
         dic["objects"] = [obj.prop for obj in self.objects]
         dic["connections"] = self.connections.items
         plistlib.writePlist(dic, 'info.plist')
-        return dic
+        return
 
     def dump_workflow(self):
         dic = dict(self.prop.items())
