@@ -32,7 +32,7 @@ class AlfredWorkflow(object):
             "createdby": "",
             "webaddress": ""
         }
-        self.connections = []
+        self.connections = None
         self.objects = []
         return
 
@@ -77,14 +77,16 @@ class AlfredWorkflow(object):
     def dump_plist(self, path='info.plist'):
         dic = dict(self.prop.items())
         dic["objects"] = [obj.prop for obj in self.objects]
-        dic["connections"] = self.connections.items
+        if self.connections:
+            dic["connections"] = self.connections.items
         plistlib.writePlist(dic, path)
         return
 
     def dump_workflow(self, path='workflow.yml', readme_path='README', script_dir='.'):
         dic = dict(self.prop.items())
         dic["objects"] = [obj.dump(sctipt_dir) for obj in self.objects]
-        dic["connections"] = self.connections.dump()
+        if self.connections:
+            dic["connections"] = self.connections.dump()
         if self.readme:
             with open(readme_path, 'w') as f:
                 f.write(self.readme.encode('utf-8'))
