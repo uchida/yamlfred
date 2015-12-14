@@ -119,12 +119,13 @@ class AlfredObject(object):
             self.script_type = 'script'
         return
 
-    def dump(self):
+    def dump(self, script_dir='.'):
         default = defaults[self.type] if self.type in defaults else {}
         prop = remove_default(self.prop, default)
         if self.script_type:
-            with open(self.prop['uid'], 'w') as f:
+            path = os.path.join(script_dir, self.prop['uid'])
+            with open(path, 'w') as f:
                 script = self.prop['config'].get(self.script_type)
                 f.write(script.encode('utf-8'))
-            prop['config'][self.script_type] = Include(self.prop['uid'])
+            prop['config'][self.script_type] = Include(path)
         return prop

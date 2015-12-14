@@ -36,7 +36,7 @@ class AlfredWorkflow(object):
         self.objects = []
         return
 
-    def load_plist(self, path):
+    def load_plist(self, path='info.plist'):
         plist = plistlib.readPlist(path)
         info = translate_plist(plist)
         self.readme = info.get("readme")
@@ -47,7 +47,7 @@ class AlfredWorkflow(object):
         self.connections = AlfredConnections(self.objects, info["connections"])
         return
 
-    def load_yaml(self, path):
+    def load_yaml(self, path='workflow.yml'):
         with open(path, 'r') as f:
             wf_yaml = yaml.load(f.read().decode('utf8'))
         for key in wf_yaml.keys():
@@ -74,21 +74,21 @@ class AlfredWorkflow(object):
         )
         return
 
-    def dump_plist(self):
+    def dump_plist(self, path='info.plist'):
         dic = dict(self.prop.items())
         dic["objects"] = [obj.prop for obj in self.objects]
         dic["connections"] = self.connections.items
-        plistlib.writePlist(dic, 'info.plist')
+        plistlib.writePlist(dic, path)
         return
 
-    def dump_workflow(self):
+    def dump_workflow(self, path='workflow.yml', readme_path='README', script_dir='.'):
         dic = dict(self.prop.items())
-        dic["objects"] = [obj.dump() for obj in self.objects]
+        dic["objects"] = [obj.dump(sctipt_dir) for obj in self.objects]
         dic["connections"] = self.connections.dump()
         if self.readme:
-            with open('README', 'w') as f:
+            with open(readme_path, 'w') as f:
                 f.write(self.readme.encode('utf-8'))
-            dic['readme'] = Include('README')
-        with open('workflow.yml', 'w') as f:
+            dic['readme'] = Include(readme_path)
+        with open(path, 'w') as f:
             yaml.dump(dic, f, default_flow_style=False)
         return
