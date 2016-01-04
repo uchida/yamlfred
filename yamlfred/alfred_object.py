@@ -127,6 +127,6 @@ class AlfredObject(object):
             path = os.path.join(script_dir, self.prop['uid'])
             with open(path, 'w') as f:
                 script = self.prop['config'].get(self.script_type)
-                f.write(script.encode('utf-8'))
+                f.write(script)
             prop['config'][self.script_type] = Include(path)
         return prop

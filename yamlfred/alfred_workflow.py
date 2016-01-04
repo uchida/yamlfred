@@ -49,7 +49,7 @@ class AlfredWorkflow(object):
 
     def load_yaml(self, path='workflow.yml'):
         with open(path, 'r') as f:
-            wf_yaml = yaml.load(f.read().decode('utf8'))
+            wf_yaml = yaml.load(f.read())
         for key in wf_yaml.keys():
             self.prop[key] = wf_yaml[key]
         for obj in wf_yaml["objects"]:
@@ -89,7 +89,7 @@ class AlfredWorkflow(object):
             dic["connections"] = self.connections.dump()
         if self.readme:
             with open(readme_path, 'w') as f:
-                f.write(self.readme.encode('utf-8'))
+                f.write(self.readme)
             dic['readme'] = Include(readme_path)
         with open(path, 'w') as f:
             yaml.dump(dic, f, default_flow_style=False)
