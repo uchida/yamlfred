@@ -84,7 +84,7 @@ class AlfredWorkflow(object):
 
     def dump_workflow(self, path='workflow.yml', readme_path='README', script_dir='.'):
         dic = dict(self.prop.items())
-        dic["objects"] = [obj.dump(sctipt_dir) for obj in self.objects]
+        dic["objects"] = [obj.dump(script_dir) for obj in self.objects]
         if self.connections:
             dic["connections"] = self.connections.dump()
         if self.readme:
