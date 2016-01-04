@@ -1,0 +1,3 @@
+on alfred_script(q)
+  -- your script here
+end alfred_script

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os.path
 import uuid
 
 import six
@@ -16,7 +17,7 @@ yaml.add_representer(Include, include_representer)
 yaml.add_constructor('!include', include_constructor)
 
 import plistlib
-from yamlfred.utils import translate_plist
+from yamlfred.utils import translate_plist, cd
 
 from yamlfred.alfred_connections import AlfredConnections
 from yamlfred.alfred_object import AlfredObject
@@ -49,7 +50,7 @@ class AlfredWorkflow(object):
         return
 
     def load_yaml(self, path='workflow.yml'):
-        with open(path, 'r') as f:
+        with cd(os.path.dirname(path)), open(path, 'r') as f:
             wf_yaml = yaml.load(f.read())
         for key in wf_yaml.keys():
             self.prop[key] = wf_yaml[key]

@@ -1,0 +1,195 @@
+bundleid: ''
+connections:
+  17E27E05-02BA-489D-AC4A-CE170BFB245B: []
+  26B2AF8D-2FFA-47E6-A0C6-54D9C224BC61: []
+  2757AEAB-43E9-4DE0-A30B-BCA51B1A5D7B: []
+  27BF9E1F-A1AD-45D2-A0C8-8A50E4EABF87: []
+  351ADB42-C9DB-42ED-B739-8FC5B698AB3F: []
+  45CC4632-CC94-4B38-8081-9670DD843F62: []
+  52FDFFAE-B750-4C4C-8B29-BCB728263DA6: []
+  53766ED0-B222-4D67-9A22-F7C15CB2A4A1: []
+  5D146C0F-1F90-4D33-B966-1AFE76B18DB5: []
+  6585341E-B9AA-4461-A293-72FB2376F542: []
+  6E3E7496-8EAE-4B3B-91E9-FB44A775B7C4: []
+  7020D5AC-F5F6-4A36-8EF9-23008883D9FB: []
+  712358C4-CD3F-4BD1-9D5A-7F115E97620B: []
+  74CBF18D-ED5A-4CF0-9C1E-028BEC3B6D4D: []
+  A593DEC9-9C74-44A3-A157-32550135DEA8: []
+  AF0F7C48-7319-47E6-8018-C1703766675F: []
+  BCC6EFE5-4D95-4A0C-9FAF-0A00666DBD3B: []
+  C49CD9D6-4A17-42D2-A399-881F7F6937EE: []
+  CF0FA84F-CBB8-4B5C-A2A0-DF86B85AA740: []
+  D252DEDE-03E3-4E48-B124-1557095951D1: []
+  DC633094-A7BC-43B2-B947-7D8C00FCB100: []
+  DF176C25-EFCF-4D01-9863-203A656DCCDD: []
+  E755F804-A1CA-42D4-AD4B-6E27F889D0A8: []
+  EC539863-AAFC-4F5A-80E4-86FF68A698CD: []
+createdby: Akihiro Uchida
+description: to test alfred workflow
+disabled: false
+name: gotchas
+objects:
+- config: {}
+  type: alfred.workflow.trigger.hotkey
+  uid: 27BF9E1F-A1AD-45D2-A0C8-8A50E4EABF87
+- config: {}
+  type: alfred.workflow.output.notification
+  uid: 712358C4-CD3F-4BD1-9D5A-7F115E97620B
+- config:
+    withspace: false
+  type: alfred.workflow.input.keyword
+  uid: BCC6EFE5-4D95-4A0C-9FAF-0A00666DBD3B
+- config: {}
+  type: alfred.workflow.action.openfile
+  uid: EC539863-AAFC-4F5A-80E4-86FF68A698CD
+- type: alfred.workflow.action.revealfile
+  uid: 7020D5AC-F5F6-4A36-8EF9-23008883D9FB
+- type: alfred.workflow.output.largetype
+  uid: 6E3E7496-8EAE-4B3B-91E9-FB44A775B7C4
+- config:
+    anchorfields: false
+    fields:
+    - field: kMDItemDisplayName
+      not: false
+      split: true
+      value: '{query}'
+      words: true
+    - field: kMDItemAlternateNames
+      not: false
+      split: true
+      value: '{query}'
+      words: true
+    - field: kMDItemFinderComment
+      not: false
+      split: true
+      value: '{query}'
+      words: true
+    keyword: aaa
+    title: aaa
+    withspace: false
+  type: alfred.workflow.input.filefilter
+  uid: 52FDFFAE-B750-4C4C-8B29-BCB728263DA6
+- config:
+    argument: ''
+    triggerid: aaa
+    triggername: aaa
+  type: alfred.workflow.trigger.remote
+  uid: AF0F7C48-7319-47E6-8018-C1703766675F
+- config: {}
+  type: alfred.workflow.action.browseinalfred
+  uid: D252DEDE-03E3-4E48-B124-1557095951D1
+- config: {}
+  type: alfred.workflow.output.clipboard
+  uid: 6585341E-B9AA-4461-A293-72FB2376F542
+- config:
+    triggerid: aaa
+  type: alfred.workflow.trigger.external
+  uid: 26B2AF8D-2FFA-47E6-A0C6-54D9C224BC61
+- config:
+    escaping: 0
+    queuedelaycustom: 1
+    queuedelayimmediatelyinitially: false
+    script: !include './45CC4632-CC94-4B38-8081-9670DD843F62'
+    title: aaa
+    withspace: false
+  type: alfred.workflow.input.scriptfilter
+  uid: 45CC4632-CC94-4B38-8081-9670DD843F62
+- config: {}
+  type: alfred.workflow.action.launchfiles
+  uid: 5D146C0F-1F90-4D33-B966-1AFE76B18DB5
+- config:
+    escaping: 0
+    script: !include './17E27E05-02BA-489D-AC4A-CE170BFB245B'
+  type: alfred.workflow.output.script
+  uid: 17E27E05-02BA-489D-AC4A-CE170BFB245B
+- config:
+    acceptsmulti: true
+    name: aaa
+  type: alfred.workflow.trigger.action
+  uid: DC633094-A7BC-43B2-B947-7D8C00FCB100
+- config:
+    name: aaa
+  type: alfred.workflow.trigger.contact
+  uid: A593DEC9-9C74-44A3-A157-32550135DEA8
+- config:
+    searcher: 1635215215
+  type: alfred.workflow.action.systemwebsearch
+  uid: 74CBF18D-ED5A-4CF0-9C1E-028BEC3B6D4D
+- config:
+    url: http://google.co.jp
+    utf8: false
+  type: alfred.workflow.action.openurl
+  uid: C49CD9D6-4A17-42D2-A399-881F7F6937EE
+- config:
+    text: aaa
+  type: alfred.workflow.trigger.fallback
+  uid: E755F804-A1CA-42D4-AD4B-6E27F889D0A8
+- config: {}
+  type: alfred.workflow.action.systemcommand
+  uid: DF176C25-EFCF-4D01-9863-203A656DCCDD
+- config: {}
+  type: alfred.workflow.action.itunescommand
+  uid: 2757AEAB-43E9-4DE0-A30B-BCA51B1A5D7B
+- config:
+    escaping: 0
+    script: !include './53766ED0-B222-4D67-9A22-F7C15CB2A4A1'
+  type: alfred.workflow.action.script
+  uid: 53766ED0-B222-4D67-9A22-F7C15CB2A4A1
+- config:
+    applescript: !include './351ADB42-C9DB-42ED-B739-8FC5B698AB3F'
+  type: alfred.workflow.action.applescript
+  uid: 351ADB42-C9DB-42ED-B739-8FC5B698AB3F
+- config: {}
+  type: alfred.workflow.action.terminalcommand
+  uid: CF0FA84F-CBB8-4B5C-A2A0-DF86B85AA740
+readme: !include './README'
+uidata:
+  17E27E05-02BA-489D-AC4A-CE170BFB245B:
+    ypos: 370.0
+  26B2AF8D-2FFA-47E6-A0C6-54D9C224BC61:
+    ypos: 250.0
+  2757AEAB-43E9-4DE0-A30B-BCA51B1A5D7B:
+    ypos: 850.0
+  27BF9E1F-A1AD-45D2-A0C8-8A50E4EABF87:
+    ypos: 10.0
+  351ADB42-C9DB-42ED-B739-8FC5B698AB3F:
+    ypos: 1090.0
+  45CC4632-CC94-4B38-8081-9670DD843F62:
+    ypos: 250.0
+  52FDFFAE-B750-4C4C-8B29-BCB728263DA6:
+    ypos: 130.0
+  53766ED0-B222-4D67-9A22-F7C15CB2A4A1:
+    ypos: 970.0
+  5D146C0F-1F90-4D33-B966-1AFE76B18DB5:
+    ypos: 370.0
+  6585341E-B9AA-4461-A293-72FB2376F542:
+    ypos: 250.0
+  6E3E7496-8EAE-4B3B-91E9-FB44A775B7C4:
+    ypos: 130.0
+  7020D5AC-F5F6-4A36-8EF9-23008883D9FB:
+    ypos: 130.0
+  712358C4-CD3F-4BD1-9D5A-7F115E97620B:
+    ypos: 10.0
+  74CBF18D-ED5A-4CF0-9C1E-028BEC3B6D4D:
+    ypos: 490.0
+  A593DEC9-9C74-44A3-A157-32550135DEA8:
+    ypos: 490.0
+  AF0F7C48-7319-47E6-8018-C1703766675F:
+    ypos: 130.0
+  BCC6EFE5-4D95-4A0C-9FAF-0A00666DBD3B:
+    ypos: 10.0
+  C49CD9D6-4A17-42D2-A399-881F7F6937EE:
+    ypos: 610.0
+  CF0FA84F-CBB8-4B5C-A2A0-DF86B85AA740:
+    ypos: 1210.0
+  D252DEDE-03E3-4E48-B124-1557095951D1:
+    ypos: 250.0
+  DC633094-A7BC-43B2-B947-7D8C00FCB100:
+    ypos: 370.0
+  DF176C25-EFCF-4D01-9863-203A656DCCDD:
+    ypos: 730.0
+  E755F804-A1CA-42D4-AD4B-6E27F889D0A8:
+    ypos: 610.0
+  EC539863-AAFC-4F5A-80E4-86FF68A698CD:
+    ypos: 10.0
+webaddress: ''

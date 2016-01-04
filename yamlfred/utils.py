@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, print_function
 
+import os.path
 import plistlib
 import datetime
 import shutil
 import tempfile
+import contextlib, os
 
 import six
 
@@ -41,6 +43,16 @@ class TemporaryDirectory(object):
 
     def __exit__(self, exc_type, exc_value, traceback):
         shutil.rmtree(self.name)
+
+
+@contextlib.contextmanager
+def cd(path):
+    curdir= os.getcwd()
+    os.chdir(path)
+    try:
+        yield
+    finally:
+        os.chdir(curdir)
 
 
 def translate_plist(obj):
