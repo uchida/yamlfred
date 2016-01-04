@@ -30,6 +30,7 @@ class AlfredConnections(object):
         prop = {}
         for key, links in self.items.items():
             if not links:
+                prop[key] = []
                 continue
             prop[key] = [remove_default(link, link_default) for link in links]
         return prop
