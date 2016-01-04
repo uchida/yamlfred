@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, print_function
 
+import os.path
 import uuid
 from yamlfred.utils import remove_default, merge_dicts
 
