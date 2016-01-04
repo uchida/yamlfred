@@ -18,6 +18,7 @@ from yamlfred.utils import TemporaryDirectory
 
 from yamlfred.alfred_workflow import AlfredWorkflow
 
+__version__ = '0.3.0'
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
@@ -44,6 +45,11 @@ def parse_arguments():
         'path', action='store', help='path to Alfred workflow'
     )
     extract_parser.set_defaults(func=extract)
+
+    version_parser = subparsers.add_parser(
+        'version', help='show version'
+    )
+    version_parser.set_defaults(func=lambda _: print(__version__))
 
     create_parser = subparsers.add_parser(
         'create', help='create Alfred workflow from workflow.yml'
