@@ -6,11 +6,16 @@ import datetime
 import shutil
 import tempfile
 
+import six
+
+try:
+    from collections import ChainMap
+except ImportError:
+    from chainmap import ChainMap
 
 def merge_dicts(default, local):
     "merge nested dictionaries"
-    return dict(default.items() + local.items())
-
+    return dict(ChainMap(local, default))
 
 def remove_default(local, default):
     explicit = {}
@@ -51,18 +56,18 @@ def translate_plist(obj):
         return obj
 
 
-def unicode_representer(dumper, data):
+def text_representer(dumper, data):
     return dumper.represent_scalar("tag:yaml.org,2002:str", data)
 
 
-def unicode_constructor(loader, node):
-    return unicode(loader.construct_scalar(node))
+def text_constructor(loader, node):
+    return six.text_type(loader.construct_scalar(node))
 
 
-class Include(unicode):
+class Include(six.text_type):
 
     def __new__(cls, path):
-        return unicode.__new__(cls, path)
+        return six.text_type.__new__(cls, path)
 
     def __repr__(self):
         return "Include({})".format(self.path)

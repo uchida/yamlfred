@@ -2,15 +2,16 @@
 
 import uuid
 
+import six
 import yaml
 
 from yamlfred.utils import (
-    unicode_representer, unicode_constructor,
+    text_representer, text_constructor,
     Include, include_representer, include_constructor,
 )
 
-yaml.add_representer(unicode, unicode_representer)
-yaml.add_constructor("tag:yaml.org,2002:str", unicode_constructor)
+yaml.add_representer(six.text_type, text_representer)
+yaml.add_constructor("tag:yaml.org,2002:str", text_constructor)
 yaml.add_representer(Include, include_representer)
 yaml.add_constructor('!include', include_constructor)
 

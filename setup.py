@@ -5,7 +5,17 @@ Licensed under CC0.
 '''
 from setuptools import setup, find_packages
 
-version = "0.2.0"
+import sys
+
+version = "0.3.0"
+
+if sys.version_info < (2, 6) or (3, 0) <= sys.version_info < (3, 3):
+    print('ERROR: yamlfred requires at least Python 2.7 or 3.3 to run.')
+    sys.exit(1)
+requires = ['PyYAML', 'six']
+
+if sys.version_info < (3, 3):
+    requires.append('ChainMap')
 
 setup(name="yamlfred",
       version=version,
@@ -17,13 +27,13 @@ setup(name="yamlfred",
       ],
       keywords="", # Separate with spaces
       author="Akihiro Uchida",
-      author_email="",
-      url="",
+      author_email="uchida@turbare.net",
+      url="https://github.com/uchida/yamlfred",
       license="CC0",
       packages=find_packages(exclude=['examples', 'tests']),
       include_package_data=True,
       zip_safe=False,
-      install_requires=['PyYAML'],
+      install_requires=requires,
       setup_requires=['pytest-runner'],
       tests_require=['pytest'],
       entry_points={

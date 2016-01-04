@@ -3,9 +3,12 @@ from __future__ import unicode_literals, print_function
 
 import sys
 
-# to evade UnicodeDecodeError on plistlib.writePlist
-reload(sys)
-sys.setdefaultencoding('utf-8')
+import six
+
+if six.PY2:
+    # to evade UnicodeDecodeError on plistlib.writePlist
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 import argparse
 import shutil
