@@ -1,7 +1,7 @@
 yamlfred
 ========
 
-|version| |license|_ |circle-ci|_
+|version| |license|_ |pypi_version| |python_versions| |circle-ci|_ |codeclimate|_
 
 The `Alfred Workflows`_ management tool with a *divide and rule* manner.
 
@@ -22,7 +22,7 @@ Installation
 
 To install yamlfred, use pip install::
 
-  $ pip install git+https://github.com/uchida/yamlfred
+  $ pip install yamlfred
 
 For the case of uninstall, use pip uninstall yamlfred::
 
@@ -33,11 +33,11 @@ Usage
 
 - Extract existing Alfred workflow::
 
-     $ yamlfred extract <workflow>.alfredworkflow
+     $ yamlfred extract {{workflow}}.alfredworkflow
 
-  Creates following <workflow> directory::
+  Creates following ``{{workflow}}`` directory::
 
-     <workflow>
+     {{workflow}}
      |-- ...
      |-- info.plist
      |-- ...
@@ -51,10 +51,10 @@ Usage
 
     $ yamlfred to_plist
 
-- create Alfred workflow (<workflow>.alfredworkflow)
+- create Alfred workflow (`{{workflow}}.alfredworkflow``)
   from ``workflow.yml``, scripts and README::
 
-    $ yamlfred create <workflow>
+    $ yamlfred create {{workflow}}
 
 Examples
 --------
@@ -72,16 +72,19 @@ consult `circle.yml` in these repositories for detailed information.
 License
 -------
 
-|CC0|_
-
-dedicated to the public domain, no rights reserved.
+CC0_ dedeicated to |CC0_publicdomain|, no rights reserved.
 
 .. |version| image:: https://img.shields.io/github/tag/uchida/yamlfred.svg
 .. |license| image:: https://img.shields.io/github/license/uchida/yamlfred.svg
 .. |circle-ci| image:: https://img.shields.io/circleci/project/uchida/yamlfred.svg
-.. |CC0| image:: http://i.creativecommons.org/p/zero/1.0/88x31.png
+.. |CC0_publicdomain| image:: http://i.creativecommons.org/p/zero/1.0/80x15.png
+.. |pypi_version| image:: https://img.shields.io/pypi/v/yamlfred.svg
+.. |python_versions| image:: https://img.shields.io/pypi/pyversions/yamlfred.svg
+.. |codeclimate| image:: https://img.shields.io/codeclimate/github/uchida/yamlfred.svg
 
 .. _Alfred Workflows: http://support.alfredapp.com/workflows
 .. _license: https://tldrlegal.com/license/creative-commons-cc0-1.0-universal
 .. _CC0: http://creativecommons.org/publicdomain/zero/1.0/
 .. _circle-ci: https://circleci.com/gh/uchida/yamlfred
+.. _codeclimate: https://codeclimate.com/github/uchida/yamlfred
+

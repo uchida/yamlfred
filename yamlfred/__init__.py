@@ -18,7 +18,7 @@ from yamlfred.utils import TemporaryDirectory
 
 from yamlfred.alfred_workflow import AlfredWorkflow
 
-__version__ = '0.3.0'
+__version__ = '0.3.1'
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
