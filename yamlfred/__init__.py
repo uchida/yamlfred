@@ -20,6 +20,7 @@ from yamlfred.alfred_workflow import AlfredWorkflow
 
 __version__ = '0.3.1'
 
+
 def parse_arguments():
     parser = argparse.ArgumentParser(
         description="A tool to manage Alfred Workflow via yaml templates",

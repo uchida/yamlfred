@@ -22,16 +22,16 @@ setup(name="yamlfred",
       description="manage Alfred workflow via yaml templates",
       long_description=open("README.rst").read(),
       classifiers=[ # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
-        'Development Status :: 1 - Planning',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
-        'Topic :: Utilities',
+          'Development Status :: 1 - Planning',
+          'Programming Language :: Python',
+          'Programming Language :: Python :: 2',
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3',
+          'Programming Language :: Python :: 3.3',
+          'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: 3.5',
+          'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
+          'Topic :: Utilities',
       ],
       keywords="", # Separate with spaces
       author="Akihiro Uchida",
@@ -45,7 +45,6 @@ setup(name="yamlfred",
       setup_requires=['pytest-runner'],
       tests_require=['pytest', 'testfixtures'],
       entry_points={
-        'console_scripts':
-            ['yamlfred=yamlfred:main']
+          'console_scripts': ['yamlfred=yamlfred:main']
       }
 )

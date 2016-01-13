@@ -6,7 +6,8 @@ import plistlib
 import datetime
 import shutil
 import tempfile
-import contextlib, os
+import contextlib
+import os
 
 import six
 
@@ -15,9 +16,11 @@ try:
 except ImportError:
     from chainmap import ChainMap
 
+
 def merge_dicts(default, local):
     "merge nested dictionaries"
     return dict(ChainMap(local, default))
+
 
 def remove_default(local, default):
     explicit = {}
@@ -28,10 +31,9 @@ def remove_default(local, default):
             else:
                 explicit[key] = local[key]
         else:
-            if key not in default:
-                explicit[key] = local[key]
-            if key in default and local[key] != default[key]:
-                explicit[key] = local[key]
+            if key in default and local[key] == default[key]:
+                continue
+            explicit[key] = local[key]
     return explicit
 
 
@@ -47,7 +49,7 @@ class TemporaryDirectory(object):
 
 @contextlib.contextmanager
 def cd(path):
-    curdir= os.getcwd()
+    curdir = os.getcwd()
     os.chdir(path)
     try:
         yield
@@ -58,8 +60,8 @@ def cd(path):
 def translate_plist(obj):
     "translate plistlib objects into Python stdtypes"
     if isinstance(obj, plistlib._InternalDict):
-        return dict((translate_plist(k), translate_plist(v))
-                    for k, v in obj.items())
+        return {translate_plist(k): translate_plist(v)
+                for k, v in obj.items()}
     elif isinstance(obj, list):
         return [translate_plist(elem) for elem in obj]
     elif isinstance(obj, datetime.datetime):
