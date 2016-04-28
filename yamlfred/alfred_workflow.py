@@ -50,7 +50,8 @@ class AlfredWorkflow(object):
         return
 
     def load_yaml(self, path='workflow.yml'):
-        with cd(os.path.dirname(path)), open(path, 'r') as f:
+        dirname = os.path.dirname(path) if os.path.dirname(path) else '.'
+        with cd(dirname), open(path, 'r') as f:
             wf_yaml = yaml.load(f.read())
         for key in wf_yaml.keys():
             self.prop[key] = wf_yaml[key]
