@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 import sys
 
-version = "0.3.1"
+version = "0.3.2"
 
 if sys.version_info < (2, 6) or (3, 0) <= sys.version_info < (3, 3):
     print('ERROR: yamlfred requires at least Python 2.7 or 3.3 to run.')
