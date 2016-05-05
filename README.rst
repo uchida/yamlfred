@@ -74,13 +74,13 @@ License
 
 CC0_ dedeicated to |CC0_publicdomain|, no rights reserved.
 
-.. |version| image:: https://img.shields.io/github/tag/uchida/yamlfred.svg
-.. |license| image:: https://img.shields.io/github/license/uchida/yamlfred.svg
-.. |circle-ci| image:: https://img.shields.io/circleci/project/uchida/yamlfred.svg
+.. |version| image:: https://img.shields.io/github/tag/uchida/yamlfred.svg?maxAge=2592000
+.. |license| image:: https://img.shields.io/github/license/uchida/yamlfred.svg?maxAge=2592000
+.. |circle-ci| image:: https://img.shields.io/circleci/project/uchida/yamlfred.svg?maxAge=2592000
 .. |CC0_publicdomain| image:: http://i.creativecommons.org/p/zero/1.0/80x15.png
-.. |pypi_version| image:: https://img.shields.io/pypi/v/yamlfred.svg
-.. |python_versions| image:: https://img.shields.io/pypi/pyversions/yamlfred.svg
-.. |codeclimate| image:: https://img.shields.io/codeclimate/github/uchida/yamlfred.svg
+.. |pypi_version| image:: https://img.shields.io/pypi/v/yamlfred.svg?maxAge=2592000
+.. |python_versions| image:: https://img.shields.io/pypi/pyversions/yamlfred.svg?maxAge=2592000
+.. |codeclimate| image:: https://img.shields.io/codeclimate/github/uchida/yamlfred.svg?maxAge=2592000
 
 .. _Alfred Workflows: http://support.alfredapp.com/workflows
 .. _license: https://tldrlegal.com/license/creative-commons-cc0-1.0-universal
