@@ -58,6 +58,9 @@ def parse_arguments():
     create_parser.add_argument(
         'name', action='store', help='name of Alfred workflow'
     )
+    create_parser.add_argument(
+        '--exclude', action='append', help='exclude file name'
+    )
     create_parser.set_defaults(func=create)
     return parser.parse_args()
 
@@ -91,7 +94,8 @@ def create(args):
     # copy to tmpdir
     with TemporaryDirectory() as tmpdir:
         tmppath = os.path.join(tmpdir, args.name)
-        shutil.copytree(os.path.curdir, tmppath)
+        ignores = shutil.ignore_patterns(*args.exclude)
+        shutil.copytree(os.path.curdir, tmppath, ignore=ignores)
         name = shutil.make_archive(args.name, 'zip', tmppath)
         shutil.move('{}.zip'.format(args.name),
                     '{}.alfredworkflow'.format(args.name))
